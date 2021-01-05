@@ -68,6 +68,7 @@ func (b *Deribit) GetOrderBook(symbol string, depth int) (result *OrderBook, err
 		})
 	}
 	result.Time = time.Unix(0, ret.Timestamp*int64(time.Millisecond)) // 1581819533335
+	result.Symbol = ret.InstrumentName
 	return
 }
 
